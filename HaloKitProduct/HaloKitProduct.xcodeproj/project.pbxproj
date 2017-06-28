@@ -19,6 +19,7 @@
 		5125E8401F03A1E5005A32FC /* BoGeMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5125E83F1F03A1E5005A32FC /* BoGeMain.storyboard */; };
 		5125E8461F03A367005A32FC /* ZLMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5125E8451F03A367005A32FC /* ZLMain.storyboard */; };
 		69199E847CD532EBFA0BE774 /* Pods_HaloKitProduct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A5437967352169A374B1AD0 /* Pods_HaloKitProduct.framework */; };
+		BF21AEA81F03C04300A3447D /* a.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21AEA71F03C04300A3447D /* a.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		5125E8411F03A2FC005A32FC /* HaloKitProduct-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HaloKitProduct-Bridging-Header.h"; sourceTree = "<group>"; };
 		5125E8451F03A367005A32FC /* ZLMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZLMain.storyboard; sourceTree = "<group>"; };
 		5DD450DC9E2791BC4CC35956 /* Pods-HaloKitProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaloKitProduct.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaloKitProduct/Pods-HaloKitProduct.release.xcconfig"; sourceTree = "<group>"; };
+		BF21AEA71F03C04300A3447D /* a.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = a.swift; sourceTree = "<group>"; };
 		F6F9793785A96CCB9494E648 /* Pods-HaloKitProduct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaloKitProduct.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaloKitProduct/Pods-HaloKitProduct.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +60,10 @@
 			children = (
 				5125E8211F0375A8005A32FC /* AppDelegate.swift */,
 				5125E8411F03A2FC005A32FC /* HaloKitProduct-Bridging-Header.h */,
+				BF21AEAB1F03C07A00A3447D /* Lib */,
+				BF21AEAA1F03C06B00A3447D /* Models */,
+				BF21AEA91F03C06400A3447D /* Controllers */,
+				BF21AEA41F03C02700A3447D /* Views */,
 				5125E8201F0375A8005A32FC /* HaloKitProduct */,
 				5125E83B1F039FB9005A32FC /* BGMain */,
 				5125E83C1F039FC0005A32FC /* ZLMain */,
@@ -133,6 +139,39 @@
 				3A5437967352169A374B1AD0 /* Pods_HaloKitProduct.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF21AEA41F03C02700A3447D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF21AEA71F03C04300A3447D /* a.swift */,
+			);
+			name = Views;
+			path = HaloKitProduct/Views;
+			sourceTree = "<group>";
+		};
+		BF21AEA91F03C06400A3447D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			path = HaloKitProduct/Controllers;
+			sourceTree = "<group>";
+		};
+		BF21AEAA1F03C06B00A3447D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			path = HaloKitProduct/Models;
+			sourceTree = "<group>";
+		};
+		BF21AEAB1F03C07A00A3447D /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Lib;
+			path = HaloKitProduct/Lib;
 			sourceTree = "<group>";
 		};
 		F94F7821178BBC8FE52C43BC /* Pods */ = {
@@ -275,6 +314,7 @@
 				5125E8381F038DF7005A32FC /* BGDefaultBridge.swift in Sources */,
 				5125E8221F0375A8005A32FC /* AppDelegate.swift in Sources */,
 				5125E83A1F039F42005A32FC /* BoGeStoryBoardSupport.swift in Sources */,
+				BF21AEA81F03C04300A3447D /* a.swift in Sources */,
 				5125E8361F038A8D005A32FC /* BGRequestHelper.swift in Sources */,
 				5125E8341F03833C005A32FC /* BGNetworkType.swift in Sources */,
 			);
