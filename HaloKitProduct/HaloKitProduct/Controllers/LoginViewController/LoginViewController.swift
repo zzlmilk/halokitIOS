@@ -1,6 +1,5 @@
-
 //
-//  UserViewController.swift
+//  LoginViewController.swift
 //  HaloKitProduct
 //
 //  Created by zhou zhiling on 2017/6/29.
@@ -9,20 +8,10 @@
 
 import UIKit
 
-class UserViewController: UIViewController {
-
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let socketManager = SocketManager();
-        
-        //print(socketManager.log())
-
-        
-        
-        
-        
 
         // Do any additional setup after loading the view.
     }

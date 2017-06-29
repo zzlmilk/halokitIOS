@@ -24,6 +24,12 @@
 		BF95C8551F04E0AD006DCCAD /* FrameWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C8521F04E0AD006DCCAD /* FrameWorkViewController.swift */; };
 		BF95C8571F04E167006DCCAD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C8561F04E167006DCCAD /* HomeViewController.swift */; };
 		BF95C8591F04E338006DCCAD /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C8581F04E338006DCCAD /* UserViewController.swift */; };
+		BF95C85D1F04E601006DCCAD /* HaloKitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C85C1F04E601006DCCAD /* HaloKitTableViewController.swift */; };
+		BF95C8601F04EA8C006DCCAD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C85E1F04EA8C006DCCAD /* LoginViewController.swift */; };
+		BF95C8631F04ED0D006DCCAD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C8621F04ED0D006DCCAD /* User.swift */; };
+		BF95C8651F04ED1A006DCCAD /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C8641F04ED1A006DCCAD /* Device.swift */; };
+		BF95C8671F04ED28006DCCAD /* G3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C8661F04ED28006DCCAD /* G3.swift */; };
+		BF95C86A1F04EF22006DCCAD /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C8691F04EF22006DCCAD /* SocketManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +54,12 @@
 		BF95C8521F04E0AD006DCCAD /* FrameWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameWorkViewController.swift; sourceTree = "<group>"; };
 		BF95C8561F04E167006DCCAD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF95C8581F04E338006DCCAD /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		BF95C85C1F04E601006DCCAD /* HaloKitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HaloKitTableViewController.swift; sourceTree = "<group>"; };
+		BF95C85E1F04EA8C006DCCAD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BF95C8621F04ED0D006DCCAD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BF95C8641F04ED1A006DCCAD /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		BF95C8661F04ED28006DCCAD /* G3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G3.swift; sourceTree = "<group>"; };
+		BF95C8691F04EF22006DCCAD /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		F6F9793785A96CCB9494E648 /* Pods-HaloKitProduct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaloKitProduct.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaloKitProduct/Pods-HaloKitProduct.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +164,7 @@
 		BF21AEA41F03C02700A3447D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF95C85B1F04E5C7006DCCAD /* UIHaloKitView */,
 			);
 			name = Views;
 			path = HaloKitProduct/Views;
@@ -165,8 +178,8 @@
 				BF95C8511F04E0AD006DCCAD /* FrameWorkViewController */,
 				BF95C8531F04E0AD006DCCAD /* HomeViewController */,
 				BF95C8541F04E0AD006DCCAD /* UserViewController */,
-				BF95C84F1F04D097006DCCAD /* HomeViewController */,
 				BF21AEAE1F04949400A3447D /* TestViewController.swift */,
+				BF95C85C1F04E601006DCCAD /* HaloKitTableViewController.swift */,
 			);
 			name = Controllers;
 			path = HaloKitProduct/Controllers;
@@ -175,6 +188,9 @@
 		BF21AEAA1F03C06B00A3447D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BF95C8621F04ED0D006DCCAD /* User.swift */,
+				BF95C8641F04ED1A006DCCAD /* Device.swift */,
+				BF95C8661F04ED28006DCCAD /* G3.swift */,
 			);
 			name = Models;
 			path = HaloKitProduct/Models;
@@ -184,16 +200,10 @@
 			isa = PBXGroup;
 			children = (
 				BF21AEAC1F03C10F00A3447D /* Consts.swift */,
+				BF95C8691F04EF22006DCCAD /* SocketManager.swift */,
 			);
 			name = Lib;
 			path = HaloKitProduct/Lib;
-			sourceTree = "<group>";
-		};
-		BF95C84F1F04D097006DCCAD /* HomeViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HomeViewController;
 			sourceTree = "<group>";
 		};
 		BF95C8501F04E0AD006DCCAD /* DeviceViewController */ = {
@@ -230,8 +240,16 @@
 		BF95C85A1F04E39E006DCCAD /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BF95C85E1F04EA8C006DCCAD /* LoginViewController.swift */,
 			);
 			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		BF95C85B1F04E5C7006DCCAD /* UIHaloKitView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIHaloKitView;
 			sourceTree = "<group>";
 		};
 		F94F7821178BBC8FE52C43BC /* Pods */ = {
@@ -370,16 +388,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF95C85D1F04E601006DCCAD /* HaloKitTableViewController.swift in Sources */,
 				5125E8241F0375A8005A32FC /* ViewController.swift in Sources */,
 				BF21AEAD1F03C10F00A3447D /* Consts.swift in Sources */,
 				5125E8381F038DF7005A32FC /* BGDefaultBridge.swift in Sources */,
+				BF95C86A1F04EF22006DCCAD /* SocketManager.swift in Sources */,
 				BF95C8591F04E338006DCCAD /* UserViewController.swift in Sources */,
 				5125E8221F0375A8005A32FC /* AppDelegate.swift in Sources */,
+				BF95C8631F04ED0D006DCCAD /* User.swift in Sources */,
 				BF95C8551F04E0AD006DCCAD /* FrameWorkViewController.swift in Sources */,
 				BF95C8571F04E167006DCCAD /* HomeViewController.swift in Sources */,
+				BF95C8651F04ED1A006DCCAD /* Device.swift in Sources */,
 				5125E83A1F039F42005A32FC /* BoGeStoryBoardSupport.swift in Sources */,
 				5125E8361F038A8D005A32FC /* BGRequestHelper.swift in Sources */,
 				5125E8341F03833C005A32FC /* BGNetworkType.swift in Sources */,
+				BF95C8671F04ED28006DCCAD /* G3.swift in Sources */,
+				BF95C8601F04EA8C006DCCAD /* LoginViewController.swift in Sources */,
 				BF21AEAF1F04949400A3447D /* TestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
