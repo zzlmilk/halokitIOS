@@ -8,18 +8,35 @@
 
 import UIKit
 
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        toMain()
+        
+        
+        
+         self.window = UIWindow(frame: UIScreen.main.bounds)
+         self.window?.backgroundColor = UIColor.white;
+         self.window?.makeKeyAndVisible();
+        
+        
+        
+         let main = FrameWorkViewController();
+        
+    
+         self.window?.rootViewController = main;
+        
+        
         
         return true
     }
 
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -48,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let navigationController = self.initialViewController()else {
             fatalError("初始 VC 错误")
         }
- 
+        
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
