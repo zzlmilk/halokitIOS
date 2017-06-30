@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         
         
-         let main = FrameWorkViewController();
+//         let main = FrameWorkViewController();
         
     
          self.window?.rootViewController = BGLoginViewController.initVC(param: nil);

@@ -20,7 +20,6 @@ class MainViewController: UIViewController {
         
         
         
-        
         let button:UIButton = UIButton(type:.contactAdd)
         button.frame = CGRect(x: 100, y: 200, width: 100, height: 100);
         self.view .addSubview(button);

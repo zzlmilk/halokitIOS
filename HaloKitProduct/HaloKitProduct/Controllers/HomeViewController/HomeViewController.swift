@@ -6,24 +6,21 @@
 //  Copyright © 2017年 范博. All rights reserved.
 //
 
+
 import UIKit
+
 
 class HomeViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
         
-       
-
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-    
         
     }
 
