@@ -30,6 +30,7 @@
 		BF95C8651F04ED1A006DCCAD /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C8641F04ED1A006DCCAD /* Device.swift */; };
 		BF95C8671F04ED28006DCCAD /* G3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C8661F04ED28006DCCAD /* G3.swift */; };
 		BF95C86A1F04EF22006DCCAD /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C8691F04EF22006DCCAD /* SocketManager.swift */; };
+		BF95C86C1F0604F9006DCCAD /* SESocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C86B1F0604F9006DCCAD /* SESocketManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		BF95C8641F04ED1A006DCCAD /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		BF95C8661F04ED28006DCCAD /* G3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G3.swift; sourceTree = "<group>"; };
 		BF95C8691F04EF22006DCCAD /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		BF95C86B1F0604F9006DCCAD /* SESocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SESocketManager.swift; sourceTree = "<group>"; };
 		F6F9793785A96CCB9494E648 /* Pods-HaloKitProduct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaloKitProduct.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaloKitProduct/Pods-HaloKitProduct.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 		BF21AEAB1F03C07A00A3447D /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				BF95C86B1F0604F9006DCCAD /* SESocketManager.swift */,
 				BF21AEAC1F03C10F00A3447D /* Consts.swift */,
 				BF95C8691F04EF22006DCCAD /* SocketManager.swift */,
 			);
@@ -402,6 +405,7 @@
 				5125E83A1F039F42005A32FC /* BoGeStoryBoardSupport.swift in Sources */,
 				5125E8361F038A8D005A32FC /* BGRequestHelper.swift in Sources */,
 				5125E8341F03833C005A32FC /* BGNetworkType.swift in Sources */,
+				BF95C86C1F0604F9006DCCAD /* SESocketManager.swift in Sources */,
 				BF95C8671F04ED28006DCCAD /* G3.swift in Sources */,
 				BF95C8601F04EA8C006DCCAD /* LoginViewController.swift in Sources */,
 				BF21AEAF1F04949400A3447D /* TestViewController.swift in Sources */,

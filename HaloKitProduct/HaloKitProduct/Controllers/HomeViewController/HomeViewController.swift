@@ -9,8 +9,11 @@
 
 import UIKit
 
+import CocoaAsyncSocket
 
-class HomeViewController: UIViewController {
+
+
+class HomeViewController: UIViewController,GCDAsyncSocketDelegate {
     
     override func loadView() {
         super.loadView()
@@ -18,10 +21,41 @@ class HomeViewController: UIViewController {
     }
     
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        
+        let socketManager = SocketManager.instance
+               
+        print(socketManager)
         
         
+        
+
+//        var clientSocket:GCDAsyncSocket!
+//        
+//        clientSocket = GCDAsyncSocket()
+//        clientSocket.delegate = self
+//        clientSocket.delegateQueue = DispatchQueue.main
+//        //creatSocketToConnectServer()
+//        
+//        do {
+//            try clientSocket.connect(toHost: "api.halokit.cn", onPort: UInt16(3030))
+//        } catch {
+//            print("error")
+//            
+//            }
+        
+    
+
+        
+    }
+    
+    
+    func socket(_ sock: GCDAsyncSocket, didConnectToHost host: String, port: UInt16) -> Void {
+        print("连接成功")
+       
     }
 
     override func didReceiveMemoryWarning() {

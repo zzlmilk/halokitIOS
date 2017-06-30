@@ -16,8 +16,9 @@ let kMaxReconnection_time = 6  // 重链接次数
 let beatLimit = 5  // 心跳回调最大限度
 let timeOut = 10
 
-let kConnectorHost = "http://api.halokit.cn"
-let kConnectorPort = 3030
+let kConnectorHost = "api.halokit.cn"
+let kConnectorPort = 6060
+
 
 
 
@@ -41,6 +42,7 @@ enum SocketRequestType:Int {
 
 
 
+
 public protocol SocketManagerDelegate  {
     func reconnectionSuccess()
     func didReadData(data: Data, tag: Int)
@@ -52,8 +54,9 @@ typealias reconnetCompletionHandle = (Bool) ->()
 
 class SocketManager:NSObject,GCDAsyncSocketDelegate{
    
-    var delegate: SocketManagerDelegate?
-    var reconncetStatusHandle : reconnetCompletionHandle?  // 为了后续业务上用户主动连接处理
+    open var delegate: SocketManagerDelegate?
+    
+    var reconncetStatusHandle : reconnetCompletionHandle?
     
     static let instance = SocketManager()
     
@@ -64,9 +67,7 @@ class SocketManager:NSObject,GCDAsyncSocketDelegate{
     var reconnectTimer:Timer!
     
     var clientSocket:GCDAsyncSocket!
-    
-    
-    
+
     
     var agent: String?
     
@@ -78,18 +79,20 @@ class SocketManager:NSObject,GCDAsyncSocketDelegate{
         clientSocket.delegate = self
         clientSocket.delegateQueue = DispatchQueue.main
         creatSocketToConnectServer()
+        
        
     }
     
     
     
      /**
-     用户主动重新连接（一般业务都有这个需求：断网后用户下拉）
+     用户主动重新连接
      */
     public func getReconncetHandle(handle: @escaping reconnetCompletionHandle)  {
         self.reconncetStatusHandle = handle
         reconnection()
     }
+    
     
     
     
@@ -100,19 +103,22 @@ class SocketManager:NSObject,GCDAsyncSocketDelegate{
 
 
 extension SocketManager{
-    /**
+     /**
      创建长连接
      */
-    func creatSocketToConnectServer() -> Void {
-      
+
+	func creatSocketToConnectServer() -> Void {
         do {
             connectStatus = 0
             try  clientSocket.connect(toHost: kConnectorHost, onPort: UInt16(kConnectorPort), withTimeout: TimeInterval(timeOut))
-            
         } catch {
             print("conncet error")
         }
     }
+
+
+        
+
     
     
     /**
@@ -120,9 +126,15 @@ extension SocketManager{
      */
     func socketDidConnectCreatLogin() -> Void {
         
+        let params = [
+            "clientID" : "7bd0e060da44b6bd51def4fed73831a9" ,
+            "deviceid" : "861933030028500",
+            "func":"00"
+        ];
         
-        let login = ["c":"1","p":"ca5542d60da951afeb3a8bc5152211a7","d":"dev_"]
-        socketWriteDataToServer(body: login)
+        
+        ///let login = ["c":"1","p":"ca5542d60da951afeb3a8bc5152211a7","d":"dev_"]
+        socketWriteDataToServer(body: params)
         reconnectionCount = 0
         connectStatus = 1
         reconncetStatusHandle?(true)
@@ -146,6 +158,8 @@ extension SocketManager{
         
     }
     
+    
+    
     /**
      向服务器发送心跳包
      */
@@ -160,8 +174,9 @@ extension SocketManager{
     func socketWriteDataToServer(body: Dictionary<String, Any>) {
         // 1: do   2: try?    3: try!
         guard let data:Data = try? Data(JSONSerialization.data(withJSONObject: body,
-                                                               options: JSONSerialization.WritingOptions(rawValue: 1))) else {
-                                                                return
+                                                               options: JSONSerialization.WritingOptions(rawValue: 1)))
+            else {
+                    return
         }
         print(body)
         clientSocket.write(data, withTimeout: -1, tag: 0)
@@ -169,11 +184,16 @@ extension SocketManager{
     }
     
     
-    /**
+     /**
      接收到服务器的数据
      */
     func socketDidReadData(data:Data, tag:Int) -> Void {
-        print("socketDidReadData")
+        let readClientDataString: NSString? = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue)
+        
+        print(readClientDataString!)
+
+        
+        
         delegate?.didReadData(data: data, tag: tag)
     }
     
@@ -227,3 +247,54 @@ extension SocketManager{
         inTimer.invalidate()
     }
 }
+
+
+/**
+ socket delegate
+ */
+ extension SocketManager {
+
+	/**
+     与服务器建立连接后根据业务需求发送登录请求、心跳包
+     */
+
+     func socket(_ sock: GCDAsyncSocket, didConnectToHost host: String, port: UInt16) -> Void {
+        //print("Successful")
+        clientSocket.readData(withTimeout: -1, tag: 0)
+        socketDidConnectCreatLogin()
+        //socketDidConnectBeginSendBeat()
+    }
+
+    /**
+     服务器接收到数据 -->> 接收到数据后抛出去
+     */
+    func socket(_ sock: GCDAsyncSocket, didRead data: Data, withTag tag: Int) -> Void {
+        
+         clientSocket.write(data, withTimeout: -1, tag: 0)
+         clientSocket.readData(to: GCDAsyncSocket.crlfData(), withTimeout: -1, tag: 0)
+         socketDidReadData(data: data, tag: tag)
+    }
+
+    func socket(_ sock: GCDAsyncSocket, didWriteDataWithTag tag: Int) -> Void {
+        clientSocket.readData(to: GCDAsyncSocket.crlfData(), withTimeout: -1, tag: 0)
+        
+    }
+
+    /**
+     断开连接
+     */
+    func socketDidDisconnect(_ sock: GCDAsyncSocket, withError err: Error?) -> Void {
+    	print("断开连接")
+        socketDidDisconectBeginSendReconnect()
+    }
+
+
+
+ }
+
+
+
+
+
+
+
