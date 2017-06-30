@@ -7,14 +7,17 @@
 //
 
 import UIKit
-
+import UserNotifications
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-    
+    static let kGtAppId     =  "yw6pQJJJ3t8iY5K4BQSKP2"
+    static let kGtAppkey    =  "e3GTtzhDPWAvxQ53QpsSl1"
+    static let kGtAppSecret = "O1WsRptOfZ70u5sE6GqV74"
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -29,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          let main = FrameWorkViewController();
         
     
-         self.window?.rootViewController = main;
+         self.window?.rootViewController = BGLoginViewController.initVC(param: nil);
         
         
         
@@ -60,23 +63,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func toMain() {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        guard let navigationController = self.initialViewController()else {
-            fatalError("初始 VC 错误")
-        }
-        
-        self.window?.rootViewController = navigationController
-        self.window?.makeKeyAndVisible()
-    }
+//    func toMain() {
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+////        guard let navigationController = self.initialViewController()else {
+////            fatalError("初始 VC 错误")
+////        }
+//        
+//        self.window?.rootViewController = navigationController
+//        self.window?.makeKeyAndVisible()
+//    }
 }
 
 extension AppDelegate {
     
-    func initialViewController() -> UIViewController? {
-        return BoGeStoryboard.shareSB[.BoGeMain].instantiateInitialViewController()
+//    func initialViewController() -> UIViewController? {
+//        return BoGeStoryboard.shareSB[.BoGeMain].instantiateInitialViewController()
+//        
+//    }
+    
+    func registerGeTui(){
+//        [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppkey appSecret:kGtAppSecret delegate:self];
+        self.registerUserNotification()
+    }
+    //注册远程通知
+    func registerUserNotification(){
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.registerForRemoteNotifications()
+            let center = UNUserNotificationCenter.current()
+            center.delegate = self //DID NOT WORK WHEN self WAS MyOtherDelegateClass()
+            center.requestAuthorization(options: [.alert, .sound, .badge]) {
+                (granted, error) in
+                // Enable or disable features based on authorization.
+                if granted {
+                    // update application settings
+                }
+            }
+        
+        }else if #available(iOS 8.0, *) {
+            
+            let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(settings)
+            
+
+        }else{
+//            let type = UIRemoteNotificationType(rawValue: .alert | .badge | .sound])
+        
+        }
         
     }
+    
+    
+    
 }
 
 

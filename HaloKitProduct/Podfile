@@ -6,5 +6,6 @@ target 'HaloKitProduct' do
   pod 'AFNetworking', '~> 3.1.0'
   pod 'SwiftyJSON', '~> 3.1.4'
   pod 'SDWebImage', '~> 4.0.0'
+  pod 'CocoaAsyncSocket', '~> 7.6.1'
 
 end
