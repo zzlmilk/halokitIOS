@@ -15,8 +15,8 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let socketManager = SocketManager();
-        
+        let socketManager = SocketManager.init();
+        //socketManager.creatSocketToConnectServer();
         //print(socketManager.log())
 
         
@@ -43,4 +43,19 @@ class UserViewController: UIViewController {
     }
     */
 
+}
+
+
+extension UserViewController:SocketManagerDelegate{
+    /**
+     重连成功 请求队列重新处理
+     */
+    func reconnectionSuccess() {
+            print("重连成功")
+    }
+    
+      func didReadData(data: Data, tag: Int) {
+         print("didReadData")
+        
+    }
 }

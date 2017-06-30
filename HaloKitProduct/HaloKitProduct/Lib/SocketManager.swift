@@ -16,8 +16,10 @@ let kMaxReconnection_time = 6  // 重链接次数
 let beatLimit = 5  // 心跳回调最大限度
 let timeOut = 10
 
-let kConnectorHost = "183.196.130.125"
-let kConnectorPort = 6101
+let kConnectorHost = "http://api.halokit.cn"
+let kConnectorPort = 3030
+
+
 
 
 enum SocketRequestType:Int {
@@ -76,7 +78,7 @@ class SocketManager:NSObject,GCDAsyncSocketDelegate{
         clientSocket.delegate = self
         clientSocket.delegateQueue = DispatchQueue.main
         creatSocketToConnectServer()
-    
+       
     }
     
     
@@ -102,18 +104,23 @@ extension SocketManager{
      创建长连接
      */
     func creatSocketToConnectServer() -> Void {
+      
         do {
             connectStatus = 0
             try  clientSocket.connect(toHost: kConnectorHost, onPort: UInt16(kConnectorPort), withTimeout: TimeInterval(timeOut))
+            
         } catch {
             print("conncet error")
         }
     }
     
+    
     /**
      长连接建立后 开始与服务器校验登录
      */
     func socketDidConnectCreatLogin() -> Void {
+        
+        
         let login = ["c":"1","p":"ca5542d60da951afeb3a8bc5152211a7","d":"dev_"]
         socketWriteDataToServer(body: login)
         reconnectionCount = 0
@@ -166,6 +173,7 @@ extension SocketManager{
      接收到服务器的数据
      */
     func socketDidReadData(data:Data, tag:Int) -> Void {
+        print("socketDidReadData")
         delegate?.didReadData(data: data, tag: tag)
     }
     
