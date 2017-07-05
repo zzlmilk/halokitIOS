@@ -85,7 +85,6 @@ class BGPersonalInfoVC: UITableViewController {
         switch indexPath.section {
         case 0:
             let cell = BGPersonalInfoheadIconCell.dequeueReusable(tableView, indexPath: indexPath)
-//            let border = 12 * UIScreen.main.scale
 
 //            cell.model =
             return cell

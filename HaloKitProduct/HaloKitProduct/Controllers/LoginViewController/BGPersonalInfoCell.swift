@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BGPersonalInfoheadIconCell: UITableViewCell {
+class BGPersonalInfoheadIconCell: UITableViewCell,ABPeoplePickerNavigationControllerDelegate {
 
     static let cell_id = "PersonalInfoCell"
 
@@ -26,6 +26,7 @@ class BGPersonalInfoheadIconCell: UITableViewCell {
     
     lazy var titleLabel  : UILabel = {
         var titleLabel = UILabel()
+        titleLabel.text = "TOUXIANG"
         return titleLabel
     }()
     
@@ -166,17 +167,17 @@ class BGPersonalInfoOthersCell: UITableViewCell {
         }
         
         titleLabel.snp.makeConstraints { (make) -> Void in
-            make.right.equalTo(16)
+            make.left.equalTo(25)
             make.top.equalTo(12)
-            make.width.equalTo(40)
+            make.width.equalTo(100)
             make.height.equalTo(20)
 
         }
         
         cententLabel.snp.makeConstraints { (make) -> Void in
-            make.right.equalTo(-32)
+            make.right.equalTo(-25)
             make.top.equalTo(12)
-            make.width.equalTo(40)
+            make.width.equalTo(100)
             make.height.equalTo(20)
         }
         
@@ -189,10 +190,45 @@ class BGPersonalInfoOthersCell: UITableViewCell {
     }
     
     func clickImgFunction(){
-    
-    
+        
     }
     
+    
+    private func tapToShowAlert(){
+        let titleImage = NSLocalizedString("Waiting image", comment:"待机图片")
+        let titleTakepho = NSLocalizedString("Take photos", comment:"拍照")
+        let titleSelect = NSLocalizedString("Select from the album", comment:"从相册中选取")
+        let titleCancel = NSLocalizedString("Cancel", comment:"取消")
+        let message = ""
+        
+        let changeHoldImageAlert = UIAlertController.createAlertView(titleImage, message: message)
+        changeHoldImageAlert.addAlertAction(titleTakepho) { (alert) in
+            if UIImagePickerController.isSourceTypeAvailable(.Camera){
+                self.portraitImagePicker.sourceType = .Camera
+                self.portraitImagePicker.delegate = self
+                self.portraitImagePicker.mediaTypes = [kUTTypeImage as String]
+                self.portraitImagePicker.allowsEditing = false
+                self.portraitImagePicker.showsCameraControls = true
+                self.presentViewController(self.portraitImagePicker, animated: true, completion: nil)
+            }
+        }
+        
+        changeHoldImageAlert.addAlertAction(titleSelect) { (alert) in
+            if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary){
+                self.portraitImagePicker.sourceType = .PhotoLibrary
+                self.portraitImagePicker.delegate = self
+                self.portraitImagePicker.mediaTypes = [kUTTypeImage as String]
+                self.portraitImagePicker.allowsEditing = false
+                self.presentViewController(self.portraitImagePicker, animated: true, completion: nil)
+                
+            }
+        }
+        
+        changeHoldImageAlert.addCancelAlertAction(titleCancel, handler: nil)
+        presentViewController(changeHoldImageAlert, animated: true, completion: nil)
+        
+    }
+
     
 }
 
