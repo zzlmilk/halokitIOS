@@ -1,4 +1,3 @@
-//
 //  AppDelegate.swift
 //  HaloKitProduct
 //
@@ -9,9 +8,8 @@
 import UIKit
 import UserNotifications
 
-
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate,GeTuiSdkDelegate {
 
     var window: UIWindow?
     static let kGtAppId     =  "yw6pQJJJ3t8iY5K4BQSKP2"
@@ -32,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
 //         let main = FrameWorkViewController();
         
     
-         self.window?.rootViewController = BGLoginViewController.initVC(param: nil);
+         self.window?.rootViewController = BGPersonalInfoVC.initVC();
         
         
         
@@ -42,44 +40,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     
     
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-//    func toMain() {
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-////        guard let navigationController = self.initialViewController()else {
-////            fatalError("初始 VC 错误")
-////        }
-//        
-//        self.window?.rootViewController = navigationController
-//        self.window?.makeKeyAndVisible()
-//    }
 }
 
+
+
 extension AppDelegate {
-    
-//    func initialViewController() -> UIViewController? {
-//        return BoGeStoryboard.shareSB[.BoGeMain].instantiateInitialViewController()
-//        
-//    }
     
     func registerGeTui(){
 //        [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppkey appSecret:kGtAppSecret delegate:self];
@@ -107,13 +88,67 @@ extension AppDelegate {
             
 
         }else{
-//            let type = UIRemoteNotificationType(rawValue: .alert | .badge | .sound])
-        
+            let type = UIRemoteNotificationType.init(rawValue: 0 | 1 | 2)
+            UIApplication.shared.registerForRemoteNotifications(matching: type)
         }
         
     }
     
+
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        let nsdataStr = NSData.init(data: deviceToken)
+        let datastr = nsdataStr.description.replacingOccurrences(of: "<", with: "").replacingOccurrences(of: ">", with: "").replacingOccurrences(of: " ", with: "")
+        print("deviceToken:\(datastr)")
+        // 向个推服务器注册deviceToken
+        GeTuiSdk.registerDeviceToken(datastr)
+    }
     
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        GeTuiSdk.resume()
+        completionHandler(UIBackgroundFetchResult.newData)
+
+    }
+    
+    
+    //统计APNs通知的点击数 ios 10 一下
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        GeTuiSdk.handleRemoteNotification(userInfo)
+        completionHandler(UIBackgroundFetchResult.newData)
+
+
+    }
+    
+    //统计APNs通知的点击数 ios 10 以上
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+    }
+    
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        GeTuiSdk.handleRemoteNotification(response.notification.request.content.userInfo)
+        completionHandler();
+
+    }
+    
+    
+    func geTuiSdkDidRegisterClient(_ clientId: String!) {
+        print(">>>[GeTuiSdk RegisterClient]:", clientId)
+        
+    }
+    
+    func geTuiSdkDidOccurError(_ error: Error!) {
+        print(">>>[GexinSdk error]:",error.localizedDescription)
+    }
+    
+    func geTuiSdkDidReceivePayloadData(_ payloadData: Data!, andTaskId taskId: String!, andMsgId msgId: String!, andOffLine offLine: Bool, fromGtAppId appId: String!) {
+        var _:String? = nil
+        guard let _ = payloadData else {
+            return
+        }
+    
+    }
     
 }
 

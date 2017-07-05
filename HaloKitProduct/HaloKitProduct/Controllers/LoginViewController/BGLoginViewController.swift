@@ -11,9 +11,6 @@ import SnapKit
 import AVKit
 import AVFoundation
 
-let SCREENW = UIScreen.main.bounds.width
-let SCREENH = UIScreen.main.bounds.height
-
 class BGLoginViewController: UIViewController {
     
     //MARK:---变量
@@ -78,15 +75,8 @@ class BGLoginViewController: UIViewController {
     }()
 
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //添加控件
-        view .addSubview(headView)
-        view .addSubview(loginBtn)
-        view .addSubview(registerBtn)
-
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         //添加布局
         headView.snp.makeConstraints { (make) -> Void in
             make.bottom.top.left.right.equalTo(0)
@@ -106,6 +96,16 @@ class BGLoginViewController: UIViewController {
             make.right.equalTo(0)
             make.bottom.equalTo(0)
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //添加控件
+        view .addSubview(headView)
+        view .addSubview(loginBtn)
+        view .addSubview(registerBtn)
+
+   
         
         
         self.createVideo()
@@ -130,12 +130,14 @@ class BGLoginViewController: UIViewController {
     func loginClickAction(){
         loginBtn.setTitleColor(UIColor.white, for: .normal)
         loginBtn.backgroundColor = UIColor(red: 31/255.0, green: 133/255.0, blue: 140/255.0, alpha: 1.0)
+        
 
     }
     
     func registerClickAction(){
         registerBtn.setTitleColor(UIColor.white, for: .normal)
         registerBtn.backgroundColor = UIColor(red: 31/255.0, green: 133/255.0, blue: 140/255.0, alpha: 1.0)
+        
 
     }
     
@@ -150,16 +152,5 @@ class BGLoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -4,7 +4,6 @@ import UIKit
 class FrameWorkViewController: UITabBarController {
 
 
-<<<<<<< HEAD
 	override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,10 +15,8 @@ class FrameWorkViewController: UITabBarController {
         let userViewController:UIViewController=UserViewController()
 		let userNav=UINavigationController(rootViewController: userViewController)
         userNav.tabBarItem=UITabBarItem(title: "用户", image: UIImage(named: "0hight"), selectedImage:UIImage(named: "0normal"))
-=======
 
-	override class func initialize() {
->>>>>>> 723d3073ef57421449c161ef95b1e42a974f8f71
+	override func initialize() {
 
         var  attrs = [String: NSObject]()
         
