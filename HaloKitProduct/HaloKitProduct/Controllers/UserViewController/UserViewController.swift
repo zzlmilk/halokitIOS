@@ -15,6 +15,7 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         let socketManager = SocketManager.init();
         //socketManager.creatSocketToConnectServer();
         //print(socketManager.log())
