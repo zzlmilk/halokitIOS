@@ -59,6 +59,16 @@ Updated and maintained by Deusty LLC and the Apple development community.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>个推云推送，All Rights Reserved.</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>Getui</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>Copyright (c) 2016 Olivier Poitrey rs@dailymotion.com
  
 Permission is hereby granted, free of charge, to any person obtaining a copy

@@ -106,7 +106,7 @@ class BGPersonalInfoOthersCell: UITableViewCell {
     lazy var titleLabel  : UILabel = {
         var titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 12)
-        titleLabel.text = "NIHAO"
+        titleLabel.text = "titleLabel"
 
         return titleLabel
     }()
@@ -171,17 +171,14 @@ class BGPersonalInfoOthersCell: UITableViewCell {
             make.width.equalTo(40)
             make.height.equalTo(20)
 
-
         }
         
         cententLabel.snp.makeConstraints { (make) -> Void in
-            make.right.equalTo(-16)
+            make.right.equalTo(-32)
             make.top.equalTo(12)
             make.width.equalTo(40)
             make.height.equalTo(20)
         }
-
-        
         
     }
 
