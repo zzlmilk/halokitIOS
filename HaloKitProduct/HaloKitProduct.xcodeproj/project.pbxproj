@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		511F89E31F0CCA4F002306FE /* ImageVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F89E11F0CCA4F002306FE /* ImageVIewExtension.swift */; };
+		511F89E51F0CCBE0002306FE /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F89E41F0CCBE0002306FE /* ImageHelper.swift */; };
 		5125E8221F0375A8005A32FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125E8211F0375A8005A32FC /* AppDelegate.swift */; };
 		5125E8241F0375A8005A32FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125E8231F0375A8005A32FC /* ViewController.swift */; };
 		5125E8271F0375A8005A32FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5125E8251F0375A8005A32FC /* Main.storyboard */; };
@@ -16,13 +18,27 @@
 		5125E8361F038A8D005A32FC /* BGRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125E8351F038A8D005A32FC /* BGRequestHelper.swift */; };
 		5125E8381F038DF7005A32FC /* BGDefaultBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125E8371F038DF7005A32FC /* BGDefaultBridge.swift */; };
 		5125E83A1F039F42005A32FC /* BoGeStoryBoardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125E8391F039F42005A32FC /* BoGeStoryBoardSupport.swift */; };
-		5125E8401F03A1E5005A32FC /* BoGeMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5125E83F1F03A1E5005A32FC /* BoGeMain.storyboard */; };
-		5125E8461F03A367005A32FC /* ZLMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5125E8451F03A367005A32FC /* ZLMain.storyboard */; };
 		5125E85D1F04ED04005A32FC /* BGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125E85C1F04ED04005A32FC /* BGLoginViewController.swift */; };
 		5125E8601F0507D2005A32FC /* HALOKIT7SEC.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5125E85F1F0507D2005A32FC /* HALOKIT7SEC.mp4 */; };
 		5125E8621F052304005A32FC /* BGPersonalInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125E8611F052304005A32FC /* BGPersonalInfoVC.swift */; };
 		5125E8641F052A1E005A32FC /* BGPersonalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125E8631F052A1E005A32FC /* BGPersonalInfoCell.swift */; };
 		5125E8661F0530F1005A32FC /* BGUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125E8651F0530F1005A32FC /* BGUserModel.swift */; };
+		5125E8681F063AD0005A32FC /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5125E8671F063AD0005A32FC /* UserNotifications.framework */; };
+		5125E86A1F063ADD005A32FC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5125E8691F063ADD005A32FC /* AdSupport.framework */; };
+		5125E86C1F063AE9005A32FC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5125E86B1F063AE9005A32FC /* Security.framework */; };
+		5125E86E1F063AF5005A32FC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5125E86D1F063AF5005A32FC /* MobileCoreServices.framework */; };
+		5125E8701F063B00005A32FC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5125E86F1F063B00005A32FC /* SystemConfiguration.framework */; };
+		5125E8721F063B0D005A32FC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5125E8711F063B0D005A32FC /* CoreTelephony.framework */; };
+		5125E8741F063B17005A32FC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5125E8731F063B17005A32FC /* AVFoundation.framework */; };
+		5125E8761F063B22005A32FC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5125E8751F063B22005A32FC /* CoreLocation.framework */; };
+		5125E8781F063B3E005A32FC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5125E8771F063B3E005A32FC /* libz.tbd */; };
+		5125E87A1F063B4C005A32FC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5125E8791F063B4C005A32FC /* libc++.tbd */; };
+		5125E87C1F063B5D005A32FC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5125E87B1F063B5D005A32FC /* libsqlite3.tbd */; };
+		513EA7011F0B13C700B90E11 /* BGPhoneRegistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513EA7001F0B13C700B90E11 /* BGPhoneRegistVC.swift */; };
+		513EA7031F0B1F9400B90E11 /* BGSetsecertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513EA7021F0B1F9400B90E11 /* BGSetsecertVC.swift */; };
+		513EA7051F0B421900B90E11 /* BGShortMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513EA7041F0B421900B90E11 /* BGShortMessageVC.swift */; };
+		513EA7071F0B42FC00B90E11 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513EA7061F0B42FC00B90E11 /* LoginView.swift */; };
+		513EA7091F0B617900B90E11 /* BGPhoneLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513EA7081F0B617900B90E11 /* BGPhoneLoginVC.swift */; };
 		69199E847CD532EBFA0BE774 /* Pods_HaloKitProduct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A5437967352169A374B1AD0 /* Pods_HaloKitProduct.framework */; };
 		BF21AEAD1F03C10F00A3447D /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21AEAC1F03C10F00A3447D /* Consts.swift */; };
 		BF21AEAF1F04949400A3447D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21AEAE1F04949400A3447D /* TestViewController.swift */; };
@@ -36,6 +52,9 @@
 
 /* Begin PBXFileReference section */
 		3A5437967352169A374B1AD0 /* Pods_HaloKitProduct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HaloKitProduct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		511F89DF1F0BAA22002306FE /* HaloKitProduct.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HaloKitProduct.entitlements; sourceTree = "<group>"; };
+		511F89E11F0CCA4F002306FE /* ImageVIewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageVIewExtension.swift; sourceTree = "<group>"; };
+		511F89E41F0CCBE0002306FE /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		5125E81E1F0375A8005A32FC /* HaloKitProduct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaloKitProduct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5125E8211F0375A8005A32FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = HaloKitProduct/AppDelegate.swift; sourceTree = "<group>"; };
 		5125E8231F0375A8005A32FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,14 +66,29 @@
 		5125E8351F038A8D005A32FC /* BGRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGRequestHelper.swift; sourceTree = "<group>"; };
 		5125E8371F038DF7005A32FC /* BGDefaultBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGDefaultBridge.swift; sourceTree = "<group>"; };
 		5125E8391F039F42005A32FC /* BoGeStoryBoardSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoGeStoryBoardSupport.swift; sourceTree = "<group>"; };
-		5125E83F1F03A1E5005A32FC /* BoGeMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BoGeMain.storyboard; sourceTree = "<group>"; };
 		5125E8411F03A2FC005A32FC /* HaloKitProduct-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HaloKitProduct-Bridging-Header.h"; sourceTree = "<group>"; };
-		5125E8451F03A367005A32FC /* ZLMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZLMain.storyboard; sourceTree = "<group>"; };
 		5125E85C1F04ED04005A32FC /* BGLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGLoginViewController.swift; sourceTree = "<group>"; };
 		5125E85F1F0507D2005A32FC /* HALOKIT7SEC.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = HALOKIT7SEC.mp4; sourceTree = "<group>"; };
 		5125E8611F052304005A32FC /* BGPersonalInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGPersonalInfoVC.swift; sourceTree = "<group>"; };
 		5125E8631F052A1E005A32FC /* BGPersonalInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BGPersonalInfoCell.swift; path = HaloKitProduct/Controllers/LoginViewController/BGPersonalInfoCell.swift; sourceTree = SOURCE_ROOT; };
 		5125E8651F0530F1005A32FC /* BGUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BGUserModel.swift; path = HaloKitProduct/Controllers/LoginViewController/BGUserModel.swift; sourceTree = SOURCE_ROOT; };
+		5125E8671F063AD0005A32FC /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		5125E8691F063ADD005A32FC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		5125E86B1F063AE9005A32FC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5125E86D1F063AF5005A32FC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5125E86F1F063B00005A32FC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5125E8711F063B0D005A32FC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		5125E8731F063B17005A32FC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5125E8751F063B22005A32FC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5125E8771F063B3E005A32FC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		5125E8791F063B4C005A32FC /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		5125E87B1F063B5D005A32FC /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		5125E87D1F064659005A32FC /* libGeTuiSdk-1.6.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libGeTuiSdk-1.6.2.0.a"; path = "Pods/Getui/libGeTuiSdk-1.6.2.0.a"; sourceTree = "<group>"; };
+		513EA7001F0B13C700B90E11 /* BGPhoneRegistVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGPhoneRegistVC.swift; sourceTree = "<group>"; };
+		513EA7021F0B1F9400B90E11 /* BGSetsecertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGSetsecertVC.swift; sourceTree = "<group>"; };
+		513EA7041F0B421900B90E11 /* BGShortMessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGShortMessageVC.swift; sourceTree = "<group>"; };
+		513EA7061F0B42FC00B90E11 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = HaloKitProduct/Controllers/LoginViewController/LoginView.swift; sourceTree = SOURCE_ROOT; };
+		513EA7081F0B617900B90E11 /* BGPhoneLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGPhoneLoginVC.swift; sourceTree = "<group>"; };
 		5DD450DC9E2791BC4CC35956 /* Pods-HaloKitProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaloKitProduct.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaloKitProduct/Pods-HaloKitProduct.release.xcconfig"; sourceTree = "<group>"; };
 		BF21AEAC1F03C10F00A3447D /* Consts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		BF21AEAE1F04949400A3447D /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +108,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5125E87C1F063B5D005A32FC /* libsqlite3.tbd in Frameworks */,
+				5125E87A1F063B4C005A32FC /* libc++.tbd in Frameworks */,
+				5125E8781F063B3E005A32FC /* libz.tbd in Frameworks */,
+				5125E8761F063B22005A32FC /* CoreLocation.framework in Frameworks */,
+				5125E8741F063B17005A32FC /* AVFoundation.framework in Frameworks */,
+				5125E8721F063B0D005A32FC /* CoreTelephony.framework in Frameworks */,
+				5125E8701F063B00005A32FC /* SystemConfiguration.framework in Frameworks */,
+				5125E86E1F063AF5005A32FC /* MobileCoreServices.framework in Frameworks */,
+				5125E86C1F063AE9005A32FC /* Security.framework in Frameworks */,
+				5125E86A1F063ADD005A32FC /* AdSupport.framework in Frameworks */,
+				5125E8681F063AD0005A32FC /* UserNotifications.framework in Frameworks */,
 				69199E847CD532EBFA0BE774 /* Pods_HaloKitProduct.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,8 +136,6 @@
 				BF21AEA91F03C06400A3447D /* Controllers */,
 				BF21AEA41F03C02700A3447D /* Views */,
 				5125E8201F0375A8005A32FC /* HaloKitProduct */,
-				5125E83B1F039FB9005A32FC /* BGMain */,
-				5125E83C1F039FC0005A32FC /* ZLMain */,
 				5125E83E1F03A15C005A32FC /* Others */,
 				5125E83D1F039FC7005A32FC /* AF_NetWork */,
 				5125E85E1F0507D2005A32FC /* video */,
@@ -113,26 +156,9 @@
 		5125E8201F0375A8005A32FC /* HaloKitProduct */ = {
 			isa = PBXGroup;
 			children = (
+				511F89DF1F0BAA22002306FE /* HaloKitProduct.entitlements */,
 			);
 			path = HaloKitProduct;
-			sourceTree = "<group>";
-		};
-		5125E83B1F039FB9005A32FC /* BGMain */ = {
-			isa = PBXGroup;
-			children = (
-				5125E83F1F03A1E5005A32FC /* BoGeMain.storyboard */,
-			);
-			name = BGMain;
-			path = HaloKitProduct/BGMain;
-			sourceTree = "<group>";
-		};
-		5125E83C1F039FC0005A32FC /* ZLMain */ = {
-			isa = PBXGroup;
-			children = (
-				5125E8451F03A367005A32FC /* ZLMain.storyboard */,
-			);
-			name = ZLMain;
-			path = HaloKitProduct/ZLMain;
 			sourceTree = "<group>";
 		};
 		5125E83D1F039FC7005A32FC /* AF_NetWork */ = {
@@ -164,6 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				5125E85C1F04ED04005A32FC /* BGLoginViewController.swift */,
+				513EA7081F0B617900B90E11 /* BGPhoneLoginVC.swift */,
+				513EA7001F0B13C700B90E11 /* BGPhoneRegistVC.swift */,
+				513EA7041F0B421900B90E11 /* BGShortMessageVC.swift */,
+				513EA7021F0B1F9400B90E11 /* BGSetsecertVC.swift */,
 				5125E8611F052304005A32FC /* BGPersonalInfoVC.swift */,
 			);
 			path = LoginViewController;
@@ -180,6 +210,18 @@
 		949E8FF640EB826DC42F72AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5125E87D1F064659005A32FC /* libGeTuiSdk-1.6.2.0.a */,
+				5125E87B1F063B5D005A32FC /* libsqlite3.tbd */,
+				5125E8791F063B4C005A32FC /* libc++.tbd */,
+				5125E8771F063B3E005A32FC /* libz.tbd */,
+				5125E8751F063B22005A32FC /* CoreLocation.framework */,
+				5125E8731F063B17005A32FC /* AVFoundation.framework */,
+				5125E8711F063B0D005A32FC /* CoreTelephony.framework */,
+				5125E86F1F063B00005A32FC /* SystemConfiguration.framework */,
+				5125E86D1F063AF5005A32FC /* MobileCoreServices.framework */,
+				5125E86B1F063AE9005A32FC /* Security.framework */,
+				5125E8691F063ADD005A32FC /* AdSupport.framework */,
+				5125E8671F063AD0005A32FC /* UserNotifications.framework */,
 				3A5437967352169A374B1AD0 /* Pods_HaloKitProduct.framework */,
 			);
 			name = Frameworks;
@@ -190,6 +232,7 @@
 			children = (
 				5125E8631F052A1E005A32FC /* BGPersonalInfoCell.swift */,
 				BF95C85B1F04E5C7006DCCAD /* UIHaloKitView */,
+				513EA7061F0B42FC00B90E11 /* LoginView.swift */,
 			);
 			name = Views;
 			path = HaloKitProduct/Views;
@@ -227,6 +270,8 @@
 			children = (
 				BF21AEAC1F03C10F00A3447D /* Consts.swift */,
 				BF95C8691F04EF22006DCCAD /* SocketManager.swift */,
+				511F89E41F0CCBE0002306FE /* ImageHelper.swift */,
+				511F89E11F0CCA4F002306FE /* ImageVIewExtension.swift */,
 			);
 			name = Lib;
 			path = HaloKitProduct/Lib;
@@ -317,6 +362,14 @@
 						DevelopmentTeam = QD9TXP32JC;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -345,8 +398,6 @@
 			files = (
 				5125E82C1F0375A8005A32FC /* LaunchScreen.storyboard in Resources */,
 				5125E8291F0375A8005A32FC /* Assets.xcassets in Resources */,
-				5125E8401F03A1E5005A32FC /* BoGeMain.storyboard in Resources */,
-				5125E8461F03A367005A32FC /* ZLMain.storyboard in Resources */,
 				5125E8601F0507D2005A32FC /* HALOKIT7SEC.mp4 in Resources */,
 				5125E8271F0375A8005A32FC /* Main.storyboard in Resources */,
 			);
@@ -407,16 +458,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				511F89E31F0CCA4F002306FE /* ImageVIewExtension.swift in Sources */,
+				513EA7051F0B421900B90E11 /* BGShortMessageVC.swift in Sources */,
+				513EA7031F0B1F9400B90E11 /* BGSetsecertVC.swift in Sources */,
+				513EA7011F0B13C700B90E11 /* BGPhoneRegistVC.swift in Sources */,
 				BF95C85D1F04E601006DCCAD /* HaloKitTableViewController.swift in Sources */,
+				513EA7091F0B617900B90E11 /* BGPhoneLoginVC.swift in Sources */,
 				5125E8241F0375A8005A32FC /* ViewController.swift in Sources */,
 				BF21AEAD1F03C10F00A3447D /* Consts.swift in Sources */,
 				5125E8381F038DF7005A32FC /* BGDefaultBridge.swift in Sources */,
 				BF95C86A1F04EF22006DCCAD /* SocketManager.swift in Sources */,
+				513EA7071F0B42FC00B90E11 /* LoginView.swift in Sources */,
 				BF95C8591F04E338006DCCAD /* UserViewController.swift in Sources */,
 				5125E8221F0375A8005A32FC /* AppDelegate.swift in Sources */,
 				5125E8621F052304005A32FC /* BGPersonalInfoVC.swift in Sources */,
 				5125E8641F052A1E005A32FC /* BGPersonalInfoCell.swift in Sources */,
 				5125E85D1F04ED04005A32FC /* BGLoginViewController.swift in Sources */,
+				511F89E51F0CCBE0002306FE /* ImageHelper.swift in Sources */,
 				BF95C8631F04ED0D006DCCAD /* User.swift in Sources */,
 				BF95C8651F04ED1A006DCCAD /* Device.swift in Sources */,
 				5125E83A1F039F42005A32FC /* BoGeStoryBoardSupport.swift in Sources */,
@@ -549,11 +607,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = HaloKitProduct/HaloKitProduct.entitlements;
 				DEVELOPMENT_TEAM = QD9TXP32JC;
 				INFOPLIST_FILE = HaloKitProduct/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.halokitglobal.developer.HaloKitProduct;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Getui",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.halokit.developer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "HaloKitProduct-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -567,11 +630,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = HaloKitProduct/HaloKitProduct.entitlements;
 				DEVELOPMENT_TEAM = QD9TXP32JC;
 				INFOPLIST_FILE = HaloKitProduct/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.halokitglobal.developer.HaloKitProduct;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Getui",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.halokit.developer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "HaloKitProduct-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

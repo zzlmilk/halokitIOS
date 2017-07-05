@@ -15,6 +15,9 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - CocoaAsyncSocket (7.6.1)
+  - Getui (1.6.2.0):
+    - Getui/Core (= 1.6.2.0)
+  - Getui/Core (1.6.2.0)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -24,6 +27,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - CocoaAsyncSocket (~> 7.6.1)
+  - Getui (~> 1.6.2.0)
   - SDWebImage (~> 4.0.0)
   - SnapKit (~> 3.2.0)
   - SwiftyJSON (~> 3.1.4)
@@ -31,10 +35,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CocoaAsyncSocket: 7eadd3f59e1a6c84e2aefc93e9ff7b55156fe174
+  Getui: 8553aaecba3ded963c4715cbab88744731313c92
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 990238fcadb9b49ad51c76c7455c30b665d0d0b5
+PODFILE CHECKSUM: d3b8eb2fca4c1e46aee911d1b42896f2f9dc620e
 
 COCOAPODS: 1.2.1
